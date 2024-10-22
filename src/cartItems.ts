@@ -1,32 +1,32 @@
+import { v4 as uuidv4 } from 'uuid'
+import { CartItem } from './types/types'
 
-
-
-const cartItems = [
+const cartItems: CartItem[] = [
 	{
-		id: 'rec1JZlfCIBOPdcT2',
+		id: uuidv4(),
 		title: 'LEGO ICONS Corvette',
 		price: '99.99',
 		img: 'https://imgbox.com/RcioCPbw',
 		amount: 1,
 	},
 	{
-		id: 'recB6qcHPxb62YJ75',
+		id: uuidv4(),
 		title: 'LEGO Batmobile',
 		price: '139.99',
 		img: 'https://imgbox.com/wdU8PN2W',
 		amount: 1,
 	},
 	{
-		id: 'recdRxBsE14Rr2VuJ',
+		id: uuidv4(),
 		title: 'LEGO Ghostbusters Vehicle',
 		price: '79.99',
 		img: 'https://imgbox.com/7VznuoEl',
 		amount: 1,
 	},
 	{
-		id: 'recwTo160XST3PIoW',
+		id: uuidv4(),
 		title: 'LEGO ICONS Porsche 911',
-		price: '119.99 ',
+		price: '119.99',
 		img: 'https://imgbox.com/Llk71qLB',
 		amount: 1,
 	},
