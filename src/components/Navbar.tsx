@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 const Navbar = () => {
 	return (
 		<nav>
-			<div>
+			<div className='bg-red-500'>
 				<h3>Redux Toolkit Basket</h3>
 			</div>
 		</nav>
