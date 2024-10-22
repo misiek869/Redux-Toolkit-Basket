@@ -1,7 +1,11 @@
 import Navbar from './components/Navbar'
 
 function App() {
-	return <Navbar />
+	return (
+		<main>
+			<Navbar />
+		</main>
+	)
 }
 
 export default App
