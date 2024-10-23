@@ -37,7 +37,7 @@ const cartSlice = createSlice({
 			let total = 0
 
 			state.map(item => {
-				amount = item.amount
+				amount += item.amount
 			})
 
 			state.amount = amount
