@@ -1,6 +1,6 @@
 import { GoChevronUp } from 'react-icons/go'
 import { GoChevronDown } from 'react-icons/go'
-import { removeItem } from '../features/cart/cartSlice'
+import { removeItem, increase, decrease } from '../features/cart/cartSlice'
 import { useDispatch } from 'react-redux'
 
 type CartItemProps = {
@@ -30,7 +30,7 @@ const CartItem = ({ id, img, title, price, amount }: CartItemProps) => {
 				</button>
 			</div>
 			<div>
-				<button>
+				<button onClick={() => dispatch(increase(id))}>
 					<GoChevronUp className='w-7 h-7 text-gray-600' />
 				</button>
 				<p className='text-center mb-0 text-xl'>{amount}</p>
