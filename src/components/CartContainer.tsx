@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux'
 import CartItem from './CartItem'
 import type { CartItemType } from '../types/types'
+import { RootState } from '../store'
 
 const CartContainer = () => {
-	const { cartItems, amount, total } = useSelector(state => state.cart)
+	const { cartItems, amount, total } = useSelector(
+		(state: RootState) => state.cart
+	)
 
 	const sectionStyles =
 		'min-h-[calc(100vh-120px)] w-[90vw] my-0 mx-auto mt-10 py-8 px-0 max-w-5xl'
