@@ -1,7 +1,9 @@
 import CartItem from './CartItem'
 
 const CartContainer = () => {
-	return <div></div>
+	const { cartI }
+
+	return <div>container</div>
 }
 
 export default CartContainer
