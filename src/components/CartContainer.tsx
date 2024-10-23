@@ -36,6 +36,19 @@ const CartContainer = () => {
 					<CartItem key={item.id} {...item} />
 				))}
 			</div>
+			<footer className='mt-16 text-center'>
+				<hr />
+				<div>
+					<h4 className='capitalize flex justify-between mt-4'>
+						total <span>${total}</span>
+					</h4>
+				</div>
+				<button
+					type='button'
+					className='uppercase bg-orange-500 text-neutral-50 py-2 px-4 rounded-sm hover:bg-orange-700 duration-300 shadow-sm cursor-pointer tracking-wider inline-block mt-8'>
+					clear cart
+				</button>
+			</footer>
 		</section>
 	)
 }
