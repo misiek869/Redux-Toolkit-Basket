@@ -12,14 +12,15 @@ const CartContainer = () => {
 	const sectionStyles =
 		'min-h-[calc(100vh-120px)] w-[90vw] my-0 mx-auto mt-10 py-8 px-0 max-w-5xl'
 
-	const sectionHeading2Styles = 'uppercase text-center mb-10 text-gray-800'
+	const sectionHeading2Styles =
+		'uppercase text-center mb-10 text-gray-700 font-bold'
 
 	if (amount < 1) {
 		return (
 			<section className={sectionStyles}>
 				<header>
 					<h2 className={sectionHeading2Styles}>your bag</h2>
-					<h4 className='lowercase text-gray-800 mt-4 text-center'>
+					<h4 className='lowercase text-gray-700 mt-4 text-center'>
 						is currently empty
 					</h4>
 				</header>
