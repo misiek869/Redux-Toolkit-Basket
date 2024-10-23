@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux'
 import CartIcon from './CartIcon'
+import { RootState } from '../store'
 
 const Navbar = () => {
-	const amount = useSelector(store => store.cart.amount)
+	const amount = useSelector((store: RootState) => store.cart.amount)
 
 	return (
 		<nav className='bg-neutral-100 py-5 px-8 border-b border-gray-500 shadow-sm'>
@@ -12,7 +13,7 @@ const Navbar = () => {
 				</h3>
 				<div className='block relative'>
 					<CartIcon />
-					<div className='absolute rounded-full flex items-center justify-center bg-neutral-400 top-2 r-2 w-7 h-7'>
+					<div className='absolute rounded-full flex items-center justify-center bg-neutral-400 top-2 right-2 w-7 h-7'>
 						<p className='text-white mb-0 text-xl'>{amount}</p>
 					</div>
 				</div>
