@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux'
 
 const Navbar = () => {
 	return (
-		<nav className='bg-neutral-100 py-5 px-8 border-b border-gray-500'>
+		<nav className='bg-neutral-100 py-5 px-8 border-b border-gray-500 shadow-sm'>
 			<div className='w-full flex justify-center items-center mx-auto'>
 				<h3 className='mb-0 tracking-wider text-orange-600'>
 					Redux Toolkit Basket
 				</h3>
+				<div className=''></div>
 			</div>
 		</nav>
 	)
