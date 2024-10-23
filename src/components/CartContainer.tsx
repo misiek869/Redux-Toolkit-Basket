@@ -42,7 +42,7 @@ const CartContainer = () => {
 				<hr />
 				<div>
 					<h4 className='capitalize flex justify-between mt-4'>
-						total <span>${total}</span>
+						total <span>${total.toFixed(2)}</span>
 					</h4>
 				</div>
 				<button

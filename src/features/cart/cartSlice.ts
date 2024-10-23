@@ -23,13 +23,17 @@ const cartSlice = createSlice({
 			const { payload } = action
 
 			const cartItem = state.cartItems.find(item => item.id === payload.id)
-			cartItem.amount = cartItem.amount + 1
+			if (cartItem) {
+				cartItem.amount += 1
+			}
 		},
 		decrease: (state, action) => {
 			const { payload } = action
 
 			const cartItem = state.cartItems.find(item => item.id === payload.id)
-			cartItem.amount = cartItem.amount - 1
+			if (cartItem) {
+				cartItem.amount -= 1
+			}
 		},
 
 		calculateTotals: state => {
@@ -38,7 +42,7 @@ const cartSlice = createSlice({
 
 			state.cartItems.map(item => {
 				amount += item.amount
-				total += item.amount * item.price
+				total += Number(item.price) * item.amount
 			})
 
 			state.amount = amount
