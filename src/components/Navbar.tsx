@@ -1,18 +1,18 @@
 import { useSelector } from 'react-redux'
-import CartIcon from './CartIcon'
 import { RootState } from '../store'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const Navbar = () => {
 	const { amount } = useSelector((store: RootState) => store.cart)
 
 	return (
 		<nav className='bg-neutral-100 py-5 px-8 border-b border-gray-500 shadow-sm'>
-			<div className='w-full flex justify-between items-center mx-auto'>
+			<div className='max-w-5xl w-full flex justify-between items-center mx-auto'>
 				<h3 className='mb-0 tracking-wider text-orange-600'>
 					Redux Toolkit Basket
 				</h3>
 				<div className='block relative'>
-					<CartIcon />
+					<FaShoppingCart className='w-8 h-8' />
 					<div className='absolute rounded-full flex items-center justify-center bg-neutral-400 bottom-2 left-2 w-7 h-7'>
 						<p className='text-white mb-0 text-xl'>{amount}</p>
 					</div>
