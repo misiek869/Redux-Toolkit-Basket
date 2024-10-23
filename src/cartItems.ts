@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { CartItem } from './types/types'
+import { CartItemType } from './types/types'
 
-const cartItems: CartItem[] = [
+const cartItems: CartItemType[] = [
 	{
 		id: uuidv4(),
 		title: 'LEGO ICONS Corvette',

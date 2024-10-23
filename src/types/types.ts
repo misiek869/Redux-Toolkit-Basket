@@ -1,4 +1,4 @@
-type CartItem = {
+type CartItemType = {
 	id: string
 	title: string
 	price: string
@@ -6,4 +6,4 @@ type CartItem = {
 	amount: number
 }
 
-export type { CartItem }
+export type { CartItemType }
