@@ -30,11 +30,19 @@ const CartItem = ({ id, img, title, price, amount }: CartItemProps) => {
 				</button>
 			</div>
 			<div>
-				<button onClick={() => dispatch(increase(id))}>
+				<button onClick={() => dispatch(increase({ id }))}>
 					<GoChevronUp className='w-7 h-7 text-gray-600' />
 				</button>
 				<p className='text-center mb-0 text-xl'>{amount}</p>
-				<button>
+				<button
+					onClick={() => {
+						if (amount === 1) {
+							dispatch(removeItem(id))
+							return
+						}
+
+						dispatch(decrease({ id }))
+					}}>
 					<GoChevronDown className='w-7 h-7 text-gray-600' />
 				</button>
 			</div>
