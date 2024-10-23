@@ -1,12 +1,13 @@
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import CartItem from './CartItem'
-import type { CartItemType } from '../types/types'
 import { RootState } from '../store'
+import { clearCart } from '../features/cart/cartSlice'
 
 const CartContainer = () => {
 	const { cartItems, amount, total } = useSelector(
 		(state: RootState) => state.cart
 	)
+	const dispatch = useDispatch()
 
 	const sectionStyles =
 		'min-h-[calc(100vh-120px)] w-[90vw] my-0 mx-auto mt-10 py-8 px-0 max-w-5xl'
@@ -44,8 +45,9 @@ const CartContainer = () => {
 					</h4>
 				</div>
 				<button
+					onClick={() => dispatch(clearCart())}
 					type='button'
-					className='uppercase bg-orange-500 text-neutral-50 py-2 px-4 rounded-sm hover:bg-orange-700 duration-300 shadow-sm cursor-pointer tracking-wider inline-block mt-8'>
+					className='uppercase bg-orange-500 text-neutral-50 py-2 px-4 rounded-sm hover:bg-orange-700 duration-300 shadow-sm cursor-pointer tracking-wider inline-block'>
 					clear cart
 				</button>
 			</footer>
