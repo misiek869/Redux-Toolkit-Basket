@@ -32,15 +32,17 @@ const cartSlice = createSlice({
 			cartItem.amount = cartItem.amount - 1
 		},
 
-		calculateTotals: (state, action) => {
+		calculateTotals: state => {
 			let amount = 0
 			let total = 0
 
-			state.map(item => {
+			state.cartItems.map(item => {
 				amount += item.amount
+				total += item.amount * item.price
 			})
 
 			state.amount = amount
+			state.total = total.toFixed(2)
 		},
 	},
 })
