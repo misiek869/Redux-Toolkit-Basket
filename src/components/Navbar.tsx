@@ -12,8 +12,8 @@ const Navbar = () => {
 					Redux Toolkit Basket
 				</h3>
 				<div className='block relative'>
-					<FaShoppingCart className='w-8 h-8' />
-					<div className='absolute rounded-full flex items-center justify-center bg-neutral-400 bottom-2 left-2 w-7 h-7'>
+					<FaShoppingCart className='w-8 h-8 text-orange-600' />
+					<div className='absolute rounded-full flex items-center justify-center bg-neutral-400 bottom-5 left-5 w-7 h-7'>
 						<p className='text-white mb-0 text-xl'>{amount}</p>
 					</div>
 				</div>
