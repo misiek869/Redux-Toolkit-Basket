@@ -3,7 +3,7 @@ import CartIcon from './CartIcon'
 import { RootState } from '../store'
 
 const Navbar = () => {
-	const amount = useSelector((store: RootState) => store.cart.amount)
+	const { amount } = useSelector((store: RootState) => store.cart)
 
 	return (
 		<nav className='bg-neutral-100 py-5 px-8 border-b border-gray-500 shadow-sm'>
