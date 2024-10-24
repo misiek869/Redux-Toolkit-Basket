@@ -36,7 +36,7 @@ const CartContainer = () => {
 			</header>
 			<div className=''>
 				{cartItems.map(item => (
-					<CartItem key={item.id} {...item} />
+					<CartItem key={item._id} {...item} />
 				))}
 			</div>
 			<footer className='mt-16 text-center'>
