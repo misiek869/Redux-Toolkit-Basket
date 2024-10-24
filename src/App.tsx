@@ -21,7 +21,7 @@ function App() {
 
 	if (isLoading) {
 		return (
-			<div className=''>
+			<div className='text-center flex items-center h-[100vh] justify-center text-orange-500'>
 				<h1>Loading...</h1>
 			</div>
 		)
