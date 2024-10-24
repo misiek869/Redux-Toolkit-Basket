@@ -1,4 +1,15 @@
+import { useDispatch } from 'react-redux'
+import { clearCart } from '../features/cart/cartSlice'
+import { closeModal } from '../features/cart/modalSlice'
+
 const Modal = () => {
+	const dispatch = useDispatch()
+
+	const handleClearCartAndCloseModal = () => {
+		dispatch(clearCart())
+		dispatch(closeModal())
+	}
+
 	const btnStyle =
 		'uppercase bg-neutral-50 text-orange-500 py-1 px-4 inline-block cursor-pointer shadow-md rounded-md hover:bg-neutral-200 hover:text-orange-600 duration-200 tracking-wider  text-base'
 
@@ -9,7 +20,10 @@ const Modal = () => {
 					Do you want to empty the cart?
 				</h3>
 				<div className='flex justify-evenly mt-4'>
-					<button className={btnStyle} type='button'>
+					<button
+						className={btnStyle}
+						type='button'
+						onClick={handleClearCartAndCloseModal}>
 						yes
 					</button>
 					<button className={btnStyle} type='button'>
