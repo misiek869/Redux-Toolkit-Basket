@@ -26,7 +26,10 @@ const Modal = () => {
 						onClick={handleClearCartAndCloseModal}>
 						yes
 					</button>
-					<button className={btnStyle} type='button'>
+					<button
+						onClick={() => dispatch(closeModal())}
+						className={btnStyle}
+						type='button'>
 						no
 					</button>
 				</div>
