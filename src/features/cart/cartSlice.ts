@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { CartItemType } from '../../types/types'
 
 const url = 'https://redux-toolkit-api.onrender.com/products'
 
 const initialState = {
-	cartItems: [],
+	cartItems: [] as CartItemType[],
 	amount: 1,
 	total: 0,
 	isLoading: true,
@@ -15,7 +16,7 @@ export const getProducts = createAsyncThunk(
 	async () => {
 		try {
 			const response = await axios(url)
-			console.log(response.data)
+
 			return response.data
 		} catch (err) {
 			console.log(err)
@@ -33,13 +34,12 @@ const cartSlice = createSlice({
 		},
 		removeItem: (state, action) => {
 			const itemId = action.payload
-			console.log(action.payload)
 			state.cartItems = state.cartItems.filter(item => item._id !== itemId)
 		},
 		increase: (state, action) => {
 			const { payload } = action
 
-			const cartItem = state.cartItems.find(item => item.id === payload.id)
+			const cartItem = state.cartItems.find(item => item._id === payload._id)
 			if (cartItem) {
 				cartItem.amount += 1
 			}
@@ -47,7 +47,8 @@ const cartSlice = createSlice({
 		decrease: (state, action) => {
 			const { payload } = action
 
-			const cartItem = state.cartItems.find(item => item.id === payload.id)
+			const cartItem = state.cartItems.find(item => item._id === payload._id)
+
 			if (cartItem) {
 				cartItem.amount -= 1
 			}

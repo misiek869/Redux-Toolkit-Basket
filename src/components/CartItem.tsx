@@ -4,7 +4,7 @@ import { removeItem, increase, decrease } from '../features/cart/cartSlice'
 import { useDispatch } from 'react-redux'
 
 type CartItemProps = {
-	id: string
+	_id: string
 	img: string
 	title: string
 	price: string
@@ -36,8 +36,8 @@ const CartItem = ({ _id, img, title, price, amount }: CartItemProps) => {
 				<p className='text-center mb-0 text-xl'>{amount}</p>
 				<button
 					onClick={() => {
-						if (amount === 1) {
-							dispatch(removeItem(_id))
+						if (amount === 0) {
+							// dispatch(removeItem(_id))
 							return
 						}
 
