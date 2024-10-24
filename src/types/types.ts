@@ -1,5 +1,5 @@
 type CartItemType = {
-	id: string
+	_id: string
 	title: string
 	price: string
 	img: string

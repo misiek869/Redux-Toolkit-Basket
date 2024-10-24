@@ -15,6 +15,7 @@ export const getProducts = createAsyncThunk(
 	async () => {
 		try {
 			const response = await axios(url)
+			console.log(response.data)
 			return response.data
 		} catch (err) {
 			console.log(err)
@@ -32,7 +33,7 @@ const cartSlice = createSlice({
 		},
 		removeItem: (state, action) => {
 			const itemId = action.payload
-			state.cartItems = state.cartItems.filter(item => item.id !== itemId)
+			state.cartItems = state.cartItems.filter(item => item._id !== itemId)
 		},
 		increase: (state, action) => {
 			const { payload } = action
