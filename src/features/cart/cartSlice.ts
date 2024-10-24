@@ -4,17 +4,27 @@ import cartItems from '../../cartItems'
 const url = 'https://redux-toolkit-api.onrender.com/products'
 
 const initialState = {
-	cartItems: cartItems,
+	cartItems: [],
 	amount: 1,
 	total: 0,
 	isLoading: true,
 }
 
-export const getProducts = createAsyncThunk('cart/getCartProducts', () => {
-	return fetch(url)
-		.then(resp => resp.json())
-		.catch(err => console.log(err))
-})
+export const getProducts = createAsyncThunk(
+	'cart/getCartProducts',
+	async () => {
+		try {
+			const response = await fetch(url)
+			if (!response.ok) {
+				throw new Error('Network response was not ok')
+			}
+			return await response.json()
+		} catch (err) {
+			console.log(err)
+			return []
+		}
+	}
+)
 
 const cartSlice = createSlice({
 	name: 'cart',
