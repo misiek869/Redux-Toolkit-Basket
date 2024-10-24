@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import cartItems from '../../cartItems'
+import axios from 'axios'
 
 const url = 'https://redux-toolkit-api.onrender.com/products'
 
@@ -14,11 +14,8 @@ export const getProducts = createAsyncThunk(
 	'cart/getCartProducts',
 	async () => {
 		try {
-			const response = await fetch(url)
-			if (!response.ok) {
-				throw new Error('Network response was not ok')
-			}
-			return await response.json()
+			const response = await axios(url)
+			return response.data
 		} catch (err) {
 			console.log(err)
 			return []
