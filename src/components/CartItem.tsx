@@ -11,7 +11,7 @@ type CartItemProps = {
 	amount: number
 }
 
-const CartItem = ({ id, img, title, price, amount }: CartItemProps) => {
+const CartItem = ({ _id, img, title, price, amount }: CartItemProps) => {
 	const dispatch = useDispatch()
 
 	return (
@@ -23,25 +23,25 @@ const CartItem = ({ id, img, title, price, amount }: CartItemProps) => {
 					{price}
 				</h4>
 				<button
-					onClick={() => dispatch(removeItem(id))}
+					onClick={() => dispatch(removeItem(_id))}
 					className='text-orange-400 tracking-wider cursor-pointer text-sm bg-none hover:text-orange-600 duration-300 mt-1'
 					type='button'>
 					remove
 				</button>
 			</div>
 			<div>
-				<button onClick={() => dispatch(increase({ id }))}>
+				<button onClick={() => dispatch(increase({ _id }))}>
 					<GoChevronUp className='w-7 h-7 text-gray-600' />
 				</button>
 				<p className='text-center mb-0 text-xl'>{amount}</p>
 				<button
 					onClick={() => {
 						if (amount === 1) {
-							dispatch(removeItem(id))
+							dispatch(removeItem(_id))
 							return
 						}
 
-						dispatch(decrease({ id }))
+						dispatch(decrease({ _id }))
 					}}>
 					<GoChevronDown className='w-7 h-7 text-gray-600' />
 				</button>
