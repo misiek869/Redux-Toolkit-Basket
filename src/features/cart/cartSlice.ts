@@ -1,5 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import cartItems from '../../cartItems'
+
+const url = 'https://redux-toolkit-api.onrender.com/products'
 
 const initialState = {
 	cartItems: cartItems,
@@ -7,6 +9,12 @@ const initialState = {
 	total: 0,
 	isLoading: true,
 }
+
+export const getProducts = createAsyncThunk('cart/getCartProducts', () => {
+	return fetch(url)
+		.then(resp => resp.json())
+		.catch(err => console.log(err))
+})
 
 const cartSlice = createSlice({
 	name: 'cart',
@@ -47,6 +55,19 @@ const cartSlice = createSlice({
 
 			state.amount = amount
 			state.total = total
+		},
+	},
+	extraReducers: {
+		[getProducts.pending]: state => {
+			state.isLoading = true
+		},
+		[getProducts.fulfilled]: (state, action) => {
+			console.log(action)
+			state.isLoading = false
+			state.cartItems = action.payload
+		},
+		[getProducts.rejected]: state => {
+			state.isLoading = false
 		},
 	},
 })
