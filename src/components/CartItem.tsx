@@ -38,12 +38,17 @@ const CartItem = ({ _id, img, title, price, amount }: CartItemProps) => {
 					onClick={() => {
 						if (amount === 0) {
 							// dispatch(removeItem(_id))
+
 							return
 						}
 
 						dispatch(decrease({ _id }))
 					}}>
-					<GoChevronDown className='w-7 h-7 text-gray-600' />
+					<GoChevronDown
+						className={`w-7 h-7 text-gray-600 ${
+							amount === 0 ? 'opacity-40' : ''
+						}`}
+					/>
 				</button>
 			</div>
 		</article>
