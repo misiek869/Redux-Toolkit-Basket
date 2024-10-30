@@ -13,7 +13,7 @@ https://redux-toolkit-basket.netlify.app/
 
 ## Installation
 
-To deploy this project run
+To install this project run
 
 ```bash
   npm install
